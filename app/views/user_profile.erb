@@ -1,0 +1,5 @@
+<h1>Welcome to <%= @current_user.username %>'s profile!</h1>
+
+<% @current_user.tweets.each do |tweet| %>
+  <p><%= erb :tweet, locals: {tweet: tweet} %></p>
+<% end %>

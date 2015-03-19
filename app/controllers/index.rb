@@ -40,4 +40,22 @@ post '/login' do
   end
 end
 
-\
+get '/users' do
+  @all_users = User.all
+
+  erb :all_users
+end
+
+get '/users/:username' do
+  @current_user = User.where(username: params[:username])
+
+  erb :user_profile
+end
+
+
+
+
+
+
+
+
