@@ -1,5 +1,5 @@
 source 'https://rubygems.org'
-ruby '2.1.0'
+ruby '2.0.0'
 
 # PostgreSQL driver
 gem 'pg'
@@ -26,5 +26,5 @@ group :test, :development do
   gem 'factory_girl'
   gem 'faker'
   gem 'hirb'
-  gem 'pry-byebug'
+  gem 'pry-debugger'
 end
