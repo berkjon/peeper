@@ -20,8 +20,9 @@ require "sinatra/reloader" if development?
 
 require 'erb'
 
-require 'hirb'
-require 'pry-debugger'
+require 'hirb' if development?
+require 'pry-debugger' if development?
+require 'bcrypt'
 
 # Some helper constants for path-centric logic
 APP_ROOT = Pathname.new(File.expand_path('../../', __FILE__))
