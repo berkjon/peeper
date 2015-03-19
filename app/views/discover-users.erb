@@ -1,0 +1,5 @@
+#List out all users on Peeper
+
+<% @all_users.each do |user| %>
+  <%= erb :"_user-box", locals: {user: user} %>
+<% end %>
