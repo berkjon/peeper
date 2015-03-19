@@ -10,4 +10,6 @@ class User < ActiveRecord::Base
   has_many :stalkers, through: :stalker_relationships, source: "stalker"
   has_many :stalkees, through: :stalkee_relationships, source: "stalkee"
 
+  validates :username, :email, presence: true
+
 end
