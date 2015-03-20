@@ -51,7 +51,7 @@ class User < ActiveRecord::Base
       whisper_array << stalkee.whispers
     end
     whisper_array.flatten!
-    whisper_array = whisper_array.sort_by {|whispers| whispers.created_at}
+    whisper_array = whisper_array.sort_by.reverse {|whispers| whispers.created_at}
     # return whisper_array
     # binding.pry
   end
