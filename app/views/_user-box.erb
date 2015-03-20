@@ -4,12 +4,12 @@
   <% if current_user.stalking?(user) %>
     <form method="post" action="/users/<%= user.username %>/unstalk">
       <input type="hidden" name="_method" value="put">
-      <button type="submit">Unstalk</button>
+      <button class="button" type="submit">Unstalk</button>
     </form>
   <% else %>
     <form method="post" action="/users/<%= user.username %>/stalk">
       <input type="hidden" name="_method" value="put">
-      <button type="submit">Stalk</button>
+      <button class="button" type="submit">Stalk</button>
     </form>
   <% end %>
 </div>
