@@ -38,13 +38,25 @@ end
 get '/users' do
   @all_users = User.all
 
-  erb :all_users
+  erb :"discover-users"
 end
 
 get '/users/:username' do
   @current_user = User.where(username: params[:username])
 
   erb :user_profile
+end
+
+put '/users/:username/unstalk' do
+  user_to_unstalk = User.where(username: params[:username]).first
+  current_user.unstalk(user_to_unstalk)
+  redirect '/users'
+end
+
+put '/users/:username/stalk' do
+  user_to_stalk = User.where(username: params[:username]).first
+  current_user.stalk(user_to_stalk)
+  redirect '/users'
 end
 
 get '/logout' do
