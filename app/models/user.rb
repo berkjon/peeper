@@ -31,9 +31,10 @@ class User < ActiveRecord::Base
   end
 
   def stalk(user_to_stalk)
-    if Stalking.create(stalker_id: self.id, stalkee_id: user_to_stalk.id)
+    if self.stalking?(user_to_stalk)
+      p "you're already stalking #{user_to_stalk.username}!"
     else
-      p "failed to stalk"
+      Stalking.create(stalker_id: self.id, stalkee_id: user_to_stalk.id)
     end
   end
 
@@ -44,5 +45,15 @@ class User < ActiveRecord::Base
     end
   end
 
+  def feed
+    whisper_array = []
+    self.stalkees.each do |stalkee|
+      whisper_array << stalkee.whispers
+    end
+    whisper_array.flatten!
+    whisper_array = whisper_array.sort_by {|whispers| whispers.created_at}
+    # return whisper_array
+    # binding.pry
+  end
 
 end
