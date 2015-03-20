@@ -2,6 +2,10 @@
 
 <h1>Welcome to <%= @current_user.username %>'s profile!</h1>
 
-<% @current_user.tweets.each do |tweet| %>
-  <p><%= erb :tweet, locals: {tweet: tweet} %></p>
+<p><%= erb :_new_whisper %></p>
+
+<% @current_user.whispers.each do |whisper| %>
+  <p><%= erb :_whisper, locals: {whisper: whisper} %></p>
 <% end %>
+
+
