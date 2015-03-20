@@ -1,6 +1,11 @@
-<%= erb :_navbar, locals: {current_user: @current_user} %>
+<%= erb :_navbar %>
 
-<h2><%= @current_user.username %>, here is your PeepFeed</h2>
+<h1><%= current_user.username %>, here is your PeepFeed</h1>
+
+<% puts current_user.feed %>
+<% current_user.feed.each do |whisper| %>
+  <%= erb :_whisper, locals: {whisper: whisper} %>
+<% end %>
 
 <div class="whisper_box">
 

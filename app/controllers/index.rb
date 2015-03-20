@@ -3,7 +3,6 @@ get '/' do
   # session[:user_id] = nil
   # binding.pry
   if session[:user_id]
-    @current_user = User.find(id=session[:user_id])
     erb :feed
   else
     erb :index
