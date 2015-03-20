@@ -1,4 +1,6 @@
 <div class="user-box">
+  <img class="gravatar" src="<%= user.gravatar_url %>">
+
   <p>Username: <%= user.username %></p>
 
   <% if current_user.stalking?(user) %>

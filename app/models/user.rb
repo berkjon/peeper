@@ -1,4 +1,5 @@
 class User < ActiveRecord::Base
+  require 'digest'
   include BCrypt
   # Remember to create a migration!
   has_many :whispers
@@ -54,6 +55,12 @@ class User < ActiveRecord::Base
     whisper_array = whisper_array.sort_by {|whispers| whispers.created_at}
     # return whisper_array
     # binding.pry
+  end
+
+  def gravatar_url
+    md5_hash = Digest::MD5.new
+    md5_hash.update self.email
+    return "http://www.gravatar.com/avatar/#{md5_hash}?d=http://cbsnews2.cbsistatic.com/hub/i/r/2002/08/05/da62eade-a642-11e2-a3f0-029118418759/thumbnail/620x350/d58085faadcad60fea4c167fee36a99a/image517488x.jpg"
   end
 
 end

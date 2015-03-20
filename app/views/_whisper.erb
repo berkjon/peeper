@@ -1,4 +1,8 @@
 <div class="whisper">
+
+  <img class="gravatar" src="http://cbsnews2.cbsistatic.com/hub/i/r/2002/08/05/da62eade-a642-11e2-a3f0-029118418759/thumbnail/620x350/d58085faadcad60fea4c167fee36a99a/image517488x.jpg">
+
+  <div class="whisper_text">
   <p>Username: <%= whisper.user.username %></p>
   <p><%= whisper.content %></p>
   <p><%= whisper.created_at %></p>
@@ -7,4 +11,6 @@
     <input type="hidden" name="_method" value="put">
     <button class="button" type="submit">Rewhisper</button>
   </form>
+</div>
+
 </div>

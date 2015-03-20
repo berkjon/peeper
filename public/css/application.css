@@ -105,9 +105,42 @@ a:hover {
   margin-left: 5%;
 }
 
+.whisper_text{
+  display: inline-block;
+  margin-left: 5%;
+  vertical-align: top;
+}
+
 .button{
   font-family: 'Gloria Hallelujah', cursive;
   color: #42FF75;
   background-color: #282E33;
   border: solid black;
 }
+
+.gravatar{
+  width: 60px;
+  display: inline-block;
+  vertical-align: top;
+  margin-top: 5%;
+}
+
+.user-box{
+  background-color: #EFF2F3;
+  padding: 2%;
+  text-align: center;
+  color: #25373A;
+  border: 25px #282E33;
+  border-radius: 12px;
+  width: 20%;
+  font-style: italic;
+  margin: 5%;
+  display: inline-block;
+}
+
+.profile_text{
+  display: inline-block;
+  margin-left: 5%;
+  vertical-align: top;
+}
+
