@@ -42,7 +42,7 @@ get '/users' do
 end
 
 get '/users/:username' do
-  @current_user = User.where(username: params[:username])
+  @current_user = User.where(username: params[:username]).first
 
   erb :user_profile
 end
