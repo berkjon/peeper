@@ -11,6 +11,8 @@ class User < ActiveRecord::Base
   has_many :stalkers, through: :stalker_relationships, source: "stalker"
   has_many :stalkees, through: :stalkee_relationships, source: "stalkee"
 
+  validates :username, :email, presence: true
+
   def password
     @password ||= Password.new(password_hash)
   end
@@ -41,5 +43,6 @@ class User < ActiveRecord::Base
       p "failed to unstalk"
     end
   end
+
 
 end
