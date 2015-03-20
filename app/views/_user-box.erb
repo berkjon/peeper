@@ -1,5 +1,15 @@
 <div class="user-box">
   <p>Username: <%= user.username %></p>
-  <p>Click to Follow</p>
-  <p>Click to Unfollow</p>
+
+  <% if current_user.stalking?(user) %>
+    <form method="post" action="/users/<%= user.username %>/unstalk">
+      <input type="hidden" name="_method" value="put">
+      <button type="submit">Unstalk</button>
+    </form>
+  <% else %>
+    <form method="post" action="/users/<%= user.username %>/stalk">
+      <input type="hidden" name="_method" value="put">
+      <button type="submit">Stalk</button>
+    </form>
+  <% end %>
 </div>

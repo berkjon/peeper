@@ -1,4 +1,6 @@
-#List out all users on Peeper
+<%= erb :_navbar, locals: {current_user: current_user} %>
+
+<h1>Find some people to stalk!</h1>
 
 <% @all_users.each do |user| %>
   <%= erb :"_user-box", locals: {user: user} %>

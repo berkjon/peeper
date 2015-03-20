@@ -20,4 +20,26 @@ class User < ActiveRecord::Base
     self.password_hash = @password
   end
 
+  def stalking?(user)
+    stalkees.include?(user)
+  end
+
+  def stalked_by?(user)
+    stalkers.include?(user)
+  end
+
+  def stalk(user_to_stalk)
+    if Stalking.create(stalker_id: self.id, stalkee_id: user_to_stalk.id)
+    else
+      p "failed to stalk"
+    end
+  end
+
+  def unstalk(user_to_unstalk)
+    if Stalking.where(stalker_id: self.id, stalkee_id: user_to_unstalk.id).first.destroy
+    else
+      p "failed to unstalk"
+    end
+  end
+
 end
