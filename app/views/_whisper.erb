@@ -3,8 +3,10 @@
   <p><%= whisper.content %></p>
   <p><%= whisper.created_at %></p>
 
-  <form method="post" action="">
-    <input type="hidden" name="_method" value="put">
-    <button class="button" type="submit">Rewhisper</button>
-  </form>
+  <% unless current_user == whisper.user %>
+    <form method="post" action="/users/<%= current_user.username %>/whisper">
+      <input type="hidden" name="whisper" value="<%= whisper.content %>">
+      <button class="button" type="submit">Rewhisper</button>
+    </form>
+  <% end %>
 </div>

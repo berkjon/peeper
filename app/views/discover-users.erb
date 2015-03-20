@@ -5,7 +5,9 @@
 <div class="whisper_box">
 
   <% @all_users.each do |user| %>
-    <%= erb :"_user-box", locals: {user: user} %>
+    <% unless user == current_user %>
+      <%= erb :"_user-box", locals: {user: user} %>
+    <% end %>
   <% end %>
 
 </div
