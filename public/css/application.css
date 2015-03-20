@@ -1,0 +1,35 @@
+/*
+font-family: 'Source Sans Pro', sans-serif;
+font-family: 'Gloria Hallelujah', cursive;
+*/
+
+/*Colors:
+dark grey #282E33
+dark green #25373A
+dark blue #164852
+light grey #495E67
+lime green #42FF75
+*/
+
+html{
+  background-color: black;
+  font-family: 'Source Sans Pro', sans-serif;
+  color: #42FF75;
+  font-size: 1em;
+}
+
+.overlay {
+  background-color: #121111;
+  width: 60%;
+  height: 100%;
+  display: inline-block;
+  text-align: center;
+  margin-left: 15%;
+  padding: 5%;
+  line-height: 1.5em;
+}
+
+h1{
+  font-size: 6em;
+  font-family: 'Gloria Hallelujah', cursive;
+}
