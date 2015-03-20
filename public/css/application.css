@@ -27,9 +27,61 @@ html{
   margin-left: 15%;
   padding: 5%;
   line-height: 1.5em;
+  border-radius: 12px;
 }
 
 h1{
   font-size: 6em;
   font-family: 'Gloria Hallelujah', cursive;
+}
+
+h2{
+  font-size: 2em;
+  font-family: 'Gloria Hallelujah', cursive;
+  text-align: left;
+}
+
+/* unvisited link */
+a:link {
+    color: #495E67;
+}
+
+/* visited link */
+a:visited {
+    color: #164852;
+}
+
+/* mouse over link */
+a:hover {
+    color: #42FF75;
+}
+
+/* selected link */
+/*a:active {
+    color: #0000FF;*/
+.navbar{
+  float: right;
+  display: block;
+}
+
+/*.logo{
+  display: inline-block;
+}*/
+
+.whisper_box{
+  background-color: #25373A;
+  padding: 10%;
+  border-radius: 12px;
+  }
+
+.whisper{
+  background-color: #EFF2F3;
+  padding: 2%;
+  text-align: left;
+  color: #25373A;
+  border: 25px #282E33;
+  border-radius: 12px;
+  width: 50%;
+  float: right;
+  font-style: italic;
 }
