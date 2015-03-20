@@ -11,6 +11,8 @@ class User < ActiveRecord::Base
   has_many :stalkers, through: :stalker_relationships, source: "stalker"
   has_many :stalkees, through: :stalkee_relationships, source: "stalkee"
 
+  validates :username, :email, presence: true
+
   def password
     @password ||= Password.new(password_hash)
   end
@@ -19,5 +21,28 @@ class User < ActiveRecord::Base
     @password = Password.create(new_password)
     self.password_hash = @password
   end
+
+  def stalking?(user)
+    stalkees.include?(user)
+  end
+
+  def stalked_by?(user)
+    stalkers.include?(user)
+  end
+
+  def stalk(user_to_stalk)
+    if Stalking.create(stalker_id: self.id, stalkee_id: user_to_stalk.id)
+    else
+      p "failed to stalk"
+    end
+  end
+
+  def unstalk(user_to_unstalk)
+    if Stalking.where(stalker_id: self.id, stalkee_id: user_to_unstalk.id).first.destroy
+    else
+      p "failed to unstalk"
+    end
+  end
+
 
 end

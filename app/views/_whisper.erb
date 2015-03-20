@@ -1,0 +1,10 @@
+<div class="whisper">
+  <p>Username: <%= current_user.username %></p>
+  <p><%= whisper.content %></p>
+  <p><%= whisper.created_at %></p>
+
+  <form method="post" action="">
+    <input type="hidden" name="_method" value="put">
+    <button type="submit">Rewhisper</button>
+  </form>
+</div>
