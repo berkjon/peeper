@@ -1,7 +1,11 @@
 <%= erb :_navbar, locals: {current_user: current_user} %>
 
-<h1>Find some people to stalk!</h1>
+<h2>Find some people to stalk!</h2>
 
-<% @all_users.each do |user| %>
-  <%= erb :"_user-box", locals: {user: user} %>
-<% end %>
+<div class="whisper_box">
+
+  <% @all_users.each do |user| %>
+    <%= erb :"_user-box", locals: {user: user} %>
+  <% end %>
+
+</div
